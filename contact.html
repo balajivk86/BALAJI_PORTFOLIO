@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Balaji</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #7F77DD;
+      --secondary: #5B54C7;
+      --text-dark: #1A1A2E;
+      --text-light: #555;
+      --bg-soft: #f8f9fa;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #ffffff;
+      color: var(--text-dark);
+      line-height: 1.7;
+      padding-bottom: 80px;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 10%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      background: linear-gradient(90deg, #D85A30, #7F77DD, #1D9E75);
+      -webkit-background-clip: text;
+      background-clip: text; /* Standard property for compatibility */
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 600; transition: 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 80px 10% 40px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      letter-spacing: -2px;
+    }
+
+    .description {
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* LAYOUT GRID */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      padding: 0 10%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* FORM STYLING */
+    .contact-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid #eee;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+
+    h3 {
+      font-family: 'Syne', sans-serif;
+      margin-bottom: 25px;
+      font-size: 1.5rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 16px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      background: var(--bg-soft);
+      font-family: inherit;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(127, 119, 221, 0.1);
+    }
+
+    .btn-send {
+      width: 100%;
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(127, 119, 221, 0.2);
+    }
+
+    .btn-send:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(127, 119, 221, 0.3);
+    }
+
+    /* INFO SIDE STYLING */
+    .info-side {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .info-box {
+      padding: 30px;
+      background: var(--bg-soft);
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .info-box:hover {
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .info-box h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .info-link {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .info-link:hover {
+      color: var(--primary);
+    }
+
+    /* WHATSAPP SPECIAL BUTTON */
+    .whatsapp-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #25D366; /* WhatsApp Green */
+      color: white;
+      padding: 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .whatsapp-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    @media (max-width: 900px) {
+      .contact-container { grid-template-columns: 1fr; padding: 0 5%; }
+      h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">BALAJI V K</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Let's Connect</h1>
+  <p class="description">
+    "A <span style="color: var(--primary); font-weight: 700;">young talent</span> with a deep passion for digital craftsmanship. I am a fresh perspective driven by curiosity, dedicated to building systems that matter."
+  </p>
+</header>
+
+<div class="contact-container">
+  
+  <div class="contact-card">
+    <h3>Send a Message</h3>
+    <form id="contact-form" action="https://formspree.io/f/mkokaezz" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+      
+      <button type="submit" id="submit-btn" class="btn-send">Send Message →</button>
+    </form>
+  </div>
+
+  <div class="info-side">
+    <div class="info-box">
+      <h4>Email Me</h4>
+      <a href="https://mail.google.com/mail/?view=cm&to=yourmail@gmail.com" target="_blank">
+  connectwithbaalaji@gmail.com ↗
+</a>
+    </div>
+
+    <div class="info-box">
+      <h4>Professional Profile</h4>
+      <a href="https://www.linkedin.com/in/balajivk/" target="_blank" class="info-link">LinkedIn Profile ↗</a>
+    </div>
+
+    <div class="info-box">
+      <h4>Location</h4>
+      <p class="info-link">Chennai, Tamil Nadu</p>
+    </div>
+
+    <a href="https://wa.me/9790915646" target="_blank" class="whatsapp-card">
+      <span style="font-size: 24px;">💬</span>
+      Chat with me on WhatsApp
+    </a>
+  </div>
+</div>
+
+<footer style="text-align: center; margin-top: 100px; color: #aaa; font-size: 0.9rem;">
+  © 2026 Developed by BALAJI · System Engineer (Trainee)
+</footer>
+
+<script>
+  const form = document.getElementById("contact-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const status = document.getElementById("submit-btn");
+    const data = new FormData(event.target);
+    
+    status.innerHTML = "Sending...";
+    status.disabled = true;
+
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // SUCCESS: Move to your thankyou.html
+        window.location.href = "thankyou.html";
+      } else {
+        status.innerHTML = "Send Message →";
+        status.disabled = false;
+        alert("Oops! There was a problem submitting your form.");
+      }
+    }).catch(error => {
+      status.innerHTML = "Send Message →";
+      status.disabled = false;
+      alert("Oops! There was a problem connecting to the server.");
+    });
+  }
+  
+  form.addEventListener("submit", handleSubmit);
+</script>
+
+</body>
+</html>

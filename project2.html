@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project - POS Billing System</title>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 40px;
+      background: #fafafa;
+      color: #333;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      color: #333;
+      font-size: 13px;
+      text-decoration: none;
+      margin-bottom: 30px;
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #7F77DD;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.8rem;
+    }
+
+    .description {
+      color: #555;
+      max-width: 700px;
+      line-height: 1.6;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    h3 {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      border-left: 5px solid #7F77DD;
+      padding-left: 15px;
+    }
+
+    p, li {
+      color: #555;
+      max-width: 750px;
+      line-height: 1.7;
+    }
+
+    ul { padding-left: 20px; }
+
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .img-grid img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .img-grid img:hover {
+      transform: scale(1.04);
+    }
+
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 20px 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #6e8efb, #a777e3, #7F77DD);
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: 0.3s;
+    }
+
+    .github-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .cta-container {
+      text-align: center;
+      margin: 80px 0;
+      padding: 40px;
+      background: #fff;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="work.html" class="back-btn">← Back to Projects</a>
+
+<header>
+  <h1>Smart POS & Billing Management System</h1>
+  <p class="description">
+    A complete shop management solution for billing, inventory tracking, and sales analytics 
+    designed for real-world retail environments.
+  </p>
+</header>
+
+<!-- ✅ PROJECT OVERVIEW -->
+<h3>Project Overview</h3>
+<p>
+This POS system was developed to streamline shop operations including billing, inventory control, 
+and customer management. The system enables quick transactions, real-time stock updates, and 
+efficient business tracking.
+</p>
+
+<!-- ✅ MY ROLE -->
+<h3>My Role</h3>
+<p>
+I independently designed and developed the full system including UI/UX, backend logic, database design, 
+invoice generation, barcode integration, and deployment as a desktop application.
+</p>
+
+<!-- ✅ DEVELOPMENT PROCESS -->
+<h3>Development Process</h3>
+<p>
+The project was developed in phases starting from UI design and requirement analysis, followed by 
+backend development using Flask. Core modules like billing and inventory were built first, then 
+advanced features such as discount handling, reporting dashboard, and auto-update system were integrated. 
+Finally, the system was packaged into an executable and deployed using an installer.
+</p>
+
+<!-- ✅ TOOLS -->
+<h3>Tools & Technologies</h3>
+<ul>
+  <li>Figma – UI/UX design, wireframing and prototyping</li>
+  <li>Python (Flask) – Backend development</li>
+  <li>HTML, CSS, Tailwind – Frontend UI</li>
+  <li>PyQt6 (WebEngine) – Desktop application integration</li>
+  <li>SQLite – Database management</li>
+  <li>PyInstaller – EXE packaging</li>
+  <li>Inno Setup – Installer creation</li>
+  <li>GitHub – Version control & auto-update system</li>
+</ul>
+
+<h3>UI/UX Design Process</h3>
+<p>
+The user interface for this system was first designed in Figma, where I created wireframes 
+and high-fidelity prototypes focusing on usability and clean layout. The design emphasized 
+quick billing flow, minimal clicks, and clarity for shop users. These designs were then 
+translated into the final application using HTML, CSS, and Tailwind.
+</p>
+
+<!-- ✅ FEATURES -->
+<h3>Key Features</h3>
+<ul>
+  <li>Smart Billing System with discount (₹ & %)</li>
+  <li>Inventory Management with stock tracking</li>
+  <li>Invoice Generation and Print Support</li>
+  <li>Sales Reports and Analytics Dashboard</li>
+  <li>Barcode Generation for products</li>
+  <li>Customer Management</li>
+  <li>Auto Update System</li>
+</ul>
+
+<!-- UI SECTIONS -->
+<h3>Login & Dashboard</h3>
+<div class="img-grid">
+  <img src="images/pos1.png">
+  <img src="images/pos2.png">
+</div>
+
+<h3>Sales & Reports</h3>
+<div class="img-grid">
+  <img src="images/pos3.png">
+  <img src="images/pos4.png">
+</div>
+
+<h3>Inventory Management</h3>
+<div class="img-grid">
+  <img src="images/pos5.png">
+  <img src="images/pos6.png">
+</div>
+
+<h3>Billing & POS Screen</h3>
+<div class="img-grid">
+  <img src="images/pos7.png">
+</div>
+
+<!-- CTA -->
+<div class="cta-container">
+  <a href="https://github.com/balajivk86/freelancer-pos-jayalakshmi-motors" target="_blank" class="github-btn">
+    💻 View Full Project on GitHub ↗
+  </a>
+</div>
+
+</body>
+</html>
