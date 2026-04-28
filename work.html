@@ -1,271 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - BALAJI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - BALAJI</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #7F77DD;
-      --secondary: #5B54C7;
-      --text-dark: #121212;
-      --text-light: #666;
-      --bg-soft: #f8f9fa;
-      --card-shadow: 0 20px 40px rgba(0,0,0,0.04);
-      --hover-shadow: 0 30px 60px rgba(127, 119, 221, 0.15);
-    }
+    <style>
+        :root {
+            --primary: #7F77DD;
+            --secondary: #5B54C7;
+            --text-dark: #121212;
+            --text-light: #666;
+            --bg-soft: #f8f9fa;
+            --card-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            --hover-shadow: 0 30px 60px rgba(127, 119, 221, 0.15);
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #ffffff;
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-    /* NAVIGATION */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 10%;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
+        /* STEP 3 — FIX IMAGE OVERFLOW */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-    .logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  background: linear-gradient(90deg, #D85A30, #7F77DD, #1D9E75);
-  -webkit-background-clip: text; /* Chrome, Safari, Edge */
-  background-clip: text;         /* Standard property (The fix) */
-  -webkit-text-fill-color: transparent;
-}
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 30px;
-    }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            background: linear-gradient(90deg, #D85A30, #7F77DD, #1D9E75);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-light);
-      font-weight: 500;
-      font-size: 15px;
-      transition: 0.3s;
-    }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
 
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--primary);
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+        }
 
-    /* HEADER */
-    .sec-header {
-      padding: 80px 10% 40px;
-      text-align: center;
-    }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
 
-    .sec-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 3.5rem;
-      margin-bottom: 15px;
-      letter-spacing: -2px;
-    }
+        /* HEADER */
+        .sec-header {
+            padding: 80px 10% 40px;
+            text-align: center;
+        }
 
-    .sec-subtitle {
-      color: var(--text-light);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+        .sec-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+        }
 
-    /* PROJECTS GRID */
-    .sec-work {
-      padding: 40px 10% 100px;
-    }
+        .sec-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    .pg {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 40px;
-    }
+        /* PROJECTS GRID */
+        .sec-work {
+            padding: 40px 10% 100px;
+        }
 
-    .pc {
-      background: #fff;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid #f0f0f0;
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      position: relative;
-    }
+        .pg {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
 
-    .pc:hover {
-      transform: translateY(-12px);
-      box-shadow: var-hover-shadow;
-      border-color: rgba(127, 119, 221, 0.2);
-    }
+        .pc {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+        }
 
-    /* IMAGE CONTAINER */
-    .img-container {
-      width: 100%;
-      height: 240px;
-      overflow: hidden;
-      position: relative;
-    }
+        .pc:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--hover-shadow);
+            border-color: rgba(127, 119, 221, 0.2);
+        }
 
-    .pc img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
+        /* IMAGE CONTAINER */
+        .img-container {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
 
-    .pc:hover img {
-      transform: scale(1.1);
-    }
+        .pc img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
 
-    /* PROJECT INFO */
-    .pi {
-      padding: 30px;
-    }
+        .pc:hover img {
+            transform: scale(1.1);
+        }
 
-    .pname {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text-dark);
-    }
+        /* PROJECT INFO */
+        .pi {
+            padding: 30px;
+        }
 
-    .pdesc {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      margin-bottom: 25px;
-      min-height: 45px;
-    }
+        .pname {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
 
-    .links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+        .pdesc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            min-height: 45px;
+        }
 
-    .btn-view {
-      padding: 10px 20px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: 0.3s;
-    }
+        .links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .btn-view:hover {
-      background: var(--secondary);
-      box-shadow: 0 5px 15px rgba(127, 119, 221, 0.3);
-    }
+        .btn-view {
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-    .github-link {
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 14px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: 0.3s;
-    }
+        .btn-view:hover {
+            background: var(--secondary);
+            box-shadow: 0 5px 15px rgba(127, 119, 221, 0.3);
+        }
 
-    .github-link:hover {
-      color: var(--text-dark);
-    }
+        .github-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--bg-soft);
-      border-top: 1px solid #eee;
-      color: var(--text-light);
-      font-size: 14px;
-    }
+        .github-link:hover {
+            color: var(--text-dark);
+        }
 
-    /* MOBILE ADJUSTMENTS */
-    @media (max-width: 768px) {
-      .sec-title { font-size: 2.5rem; }
-      nav { padding: 1rem 5%; }
-      .sec-work { padding: 40px 5% 80px; }
-    }
-  </style>
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--bg-soft);
+            border-top: 1px solid #eee;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* 📱 STEP 2 & 4 — MOBILE RESPONSIVE CSS */
+        @media (max-width: 768px) {
+            /* NAV */
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                padding: 1.5rem 5%;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            /* HEADER */
+            .sec-header {
+                padding: 40px 5%;
+                text-align: left;
+            }
+
+            /* TEXT SIZE FIX */
+            .sec-title { font-size: 26px; letter-spacing: -1px; }
+            .pname { font-size: 22px; }
+            .sec-subtitle, .pdesc, .nav-links a { font-size: 14px; }
+
+            /* GRID FIX */
+            .sec-work {
+                padding: 20px 5% 60px;
+            }
+
+            .pg {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .pc {
+                width: 100%;
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .btn-view {
+                text-align: center;
+                padding: 12px;
+            }
+
+            .github-link {
+                justify-content: center;
+                padding: 10px;
+                border: 1px solid #eee;
+                border-radius: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="logo">BALAJI V K</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="work.html" class="active">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <div class="logo">BALAJI V K</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="work.html" class="active">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
 <div class="sec-header">
-  <div class="sec-title">Selected Work</div>
-  <p class="sec-subtitle">A collection of full-stack projects, UI/UX designs, and technical solutions developed in 2026.</p>
+    <h1 class="sec-title">Selected Work</h1>
+    <p class="sec-subtitle">A collection of full-stack projects, UI/UX designs, and technical solutions developed in 2026.</p>
 </div>
 
 <div class="sec-work">
-  <div class="pg">
+    <div class="pg">
 
-    <div class="pc">
-      <div class="img-container">
-        <img src="images/event-project.png" alt="EventMatrix Project">
-      </div>
-      <div class="pi">
-        <div class="pname">EventMatrix</div>
-        <div class="pdesc">High-performance event management ecosystem with QR ticketing and admin analytics.</div>
-        <div class="links">
-          <a href="project1.html" class="btn-view">View Case Study</a>
-          <a href="https://github.com/balajivk86/event-matrix--portfolio" target="_blank" class="github-link">GitHub ↗</a>
+        <div class="pc">
+            <div class="img-container">
+                <img src="images/event-project.png" alt="EventMatrix Project">
+            </div>
+            <div class="pi">
+                <div class="pname">EventMatrix</div>
+                <div class="pdesc">High-performance event management ecosystem with QR ticketing and admin analytics.</div>
+                <div class="links">
+                    <a href="project1.html" class="btn-view">View Case Study</a>
+                    <a href="https://github.com/balajivk86/event-matrix--portfolio" target="_blank" class="github-link">GitHub ↗</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="pc">
-      <div class="img-container">
-        <img src="images/pos-project.png" alt="POS Billing System">
-      </div>
-      <div class="pi">
-        <div class="pname">POS BILLING SOFTWARE(freelance)</div>
-        <div class="pdesc">Industrial-grade Point of Sale system featuring inventory tracking and automated invoicing.</div>
-        <div class="links">
-          <a href="project2.html" class="btn-view">View Case Study</a>
-          <a href="https://github.com/balajivk86/freelancer-pos-jayalakshmi-motors" target="_blank" class="github-link">GitHub ↗</a>
+        <div class="pc">
+            <div class="img-container">
+                <img src="images/pos-project.png" alt="POS Billing System">
+            </div>
+            <div class="pi">
+                <div class="pname">POS BILLING SOFTWARE (Freelance)</div>
+                <div class="pdesc">Industrial-grade Point of Sale system featuring inventory tracking and automated invoicing.</div>
+                <div class="links">
+                    <a href="project2.html" class="btn-view">View Case Study</a>
+                    <a href="https://github.com/balajivk86/freelancer-pos-jayalakshmi-motors" target="_blank" class="github-link">GitHub ↗</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    
-      </div>
     </div>
-
-  </div>
 </div>
 
 <footer>
-  © 2026 Developed by **BALAJI** · Built with Precision & Passion
+    © 2026 Developed by **BALAJI** · Built with Precision & Passion
 </footer>
 
 </body>

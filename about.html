@@ -1,438 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Balaji</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Balaji</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --primary: #7F77DD;
-  --secondary: #5B54C7;
-  --accent: #D85A30;
-  --text-dark: #1A1A2E;
-  --text-light: #555;
-  --bg-white: #ffffff;
-  --bg-soft: #f8f9fa;
-}
+    <style>
+        :root {
+            --primary: #7F77DD;
+            --secondary: #5B54C7;
+            --accent: #D85A30;
+            --text-dark: #1A1A2E;
+            --text-light: #555;
+            --bg-white: #ffffff;
+            --bg-soft: #f8f9fa;
+        }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--bg-white);
-  color: var(--text-dark);
-  line-height: 1.7;
-}
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
 
-/* NAV - Consistent with your other pages */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 10%;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
+        /* STEP 3: FIX IMAGE OVERFLOW */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-.logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 24px;
-  background: linear-gradient(90deg, #D85A30, #7F77DD, #1D9E75);
-  /* The Fix: Add the standard property below the prefixed one */
-  -webkit-background-clip: text; 
-  background-clip: text;         
-  -webkit-text-fill-color: transparent;
-}
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
 
-.nav-links { display: flex; gap: 30px; }
-.nav-links a { text-decoration: none; color: var(--text-light); font-weight: 600; transition: 0.3s; }
-.nav-links a:hover { color: var(--primary); }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            background: linear-gradient(90deg, #D85A30, #7F77DD, #1D9E75);
+            -webkit-background-clip: text; 
+            background-clip: text;          
+            -webkit-text-fill-color: transparent;
+        }
 
-/* HERO SECTION */
-.about-hero {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  padding: 80px 10%;
-  align-items: center;
-}
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
 
-.photo-frame {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  justify-self: center;
-}
+        /* HERO SECTION */
+        .about-hero {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            padding: 80px 10%;
+            align-items: center;
+        }
 
-/* PLACEHOLDER FOR YOUR PHOTO */
-.my-photo {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 20px 20px 0px var(--bg-soft);
-  background: #eee; /* Placeholder color */
-}
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            justify-self: center;
+        }
 
-.photo-frame::after {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 100px;
-  height: 100px;
-  border-top: 5px solid var(--primary);
-  border-left: 5px solid var(--primary);
-  border-radius: 10px 0 0 0;
-}
+        .my-photo {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 20px 20px 0px var(--bg-soft);
+            background: #eee;
+        }
 
-.bio h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: 3.5rem;
-  line-height: 1.1;
-  margin-bottom: 25px;
-}
+        .photo-frame::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 100px;
+            height: 100px;
+            border-top: 5px solid var(--primary);
+            border-left: 5px solid var(--primary);
+            border-radius: 10px 0 0 0;
+        }
 
-.bio p {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  margin-bottom: 20px;
-}
+        .bio h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
 
-/* SKILLS SECTION */
-.skills-section {
-  background: var(--bg-soft);
-  padding: 80px 10%;
-  border-radius: 50px;
-  margin: 0 20px;
-}
+        .bio p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
 
-.section-label {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 800;
-  color: var(--primary);
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-  display: block;
-}
+        /* SKILLS SECTION */
+        .skills-section {
+            background: var(--bg-soft);
+            padding: 80px 10%;
+            border-radius: 50px;
+            margin: 0 20px;
+        }
 
-.skill-category {
-  margin-bottom: 40px;
-}
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
 
-.skill-category h3 {
-  font-family: 'Syne', sans-serif;
-  margin-bottom: 20px;
-}
+        .skill-category { margin-bottom: 40px; }
+        .skill-category h3 { font-family: 'Syne', sans-serif; margin-bottom: 20px; }
+        .skill-grid { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.skill-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+        .skill-tag {
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
 
-.skill-tag {
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-  border: 1px solid #eee;
-  transition: 0.3s;
-}
+        .skill-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
 
-.skill-tag:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-3px);
-}
+        /* INFO CARDS */
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 80px 10%;
+            align-items: start;
+        }
 
-/* INFO CARDS (Exp & Edu) */
-.info-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 80px 10%;
-}
+        .academic-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            margin: 10px 0 30px 0;
+            color: #1a1a2e;
+        }
 
-.info-card {
-  padding: 40px;
-  background: #fff;
-  border-radius: 24px;
-  border: 1px solid #eee;
-}
+        .edu-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            border: 1px solid #eef0f2;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+            background: #fff;
+        }
 
-.info-card h3 { font-family: 'Syne', sans-serif; margin-bottom: 15px; font-size: 1.5rem; }
+        .edu-item:hover {
+            border-color: #7F77DD;
+            background: #fafaff;
+        }
 
-/* RESUME BUTTON */
-.btn-resume {
-  display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 18px 35px;
-  border-radius: 15px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 30px;
-  transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(127, 119, 221, 0.3);
-}
+        .edu-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #fff;
+            flex-shrink: 0;
+        }
 
-.btn-resume:hover {
-  transform: scale(1.05);
-  background: var(--secondary);
-}
+        .edu-details h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
 
-footer { text-align: center; padding: 60px; color: #aaa; font-size: 0.9rem; }
+        .edu-details .degree { color: #666; font-size: 1rem; margin-bottom: 8px; }
+        .edu-details .meta { font-size: 0.9rem; color: #999; font-weight: 500; }
+        .edu-details .meta span { margin-left: 15px; color: #555; }
 
-@media (max-width: 900px) {
-  .about-hero, .info-row { grid-template-columns: 1fr; padding: 40px 5%; }
-  .bio h1 { font-size: 2.5rem; }
-}
-.education-container {
-  background: #fff;
-  padding: 40px;
-  border-radius: 24px;
-  border: 1px solid #f0f0f0;
-  max-width: 800px;
-  margin: 40px auto;
-}
+        /* RESUME BUTTON */
+        .btn-resume {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 30px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(127, 119, 221, 0.3);
+        }
 
-.academic-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 2rem;
-  margin: 10px 0 30px 0;
-  color: #1a1a2e;
-}
+        footer { text-align: center; padding: 60px; color: #aaa; font-size: 0.9rem; }
 
-.edu-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 25px;
-  border: 1px solid #eef0f2;
-  border-radius: 20px;
-  margin-bottom: 15px;
-  transition: 0.3s;
-}
+        /* 📱 MOBILE RESPONSIVE UPDATES (STEPS 2 & 4) */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                padding: 1.5rem 5%;
+            }
+            .nav-links { flex-wrap: wrap; gap: 15px; }
 
-.edu-item:hover {
-  border-color: #7F77DD;
-  background: #fafaff;
-}
+            .about-hero, .info-row {
+                grid-template-columns: 1fr;
+                padding: 40px 5%;
+                gap: 30px;
+            }
 
-.edu-logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #fff;
-  flex-shrink: 0;
-}
+            .my-photo { height: 350px; }
 
-.edu-logo img {
-  width: 80%;
-  object-fit: contain;
-}
+            /* TEXT SIZE FIX */
+            h1, .bio h1 { font-size: 26px; }
+            h2, .academic-title { font-size: 22px; }
+            p, .bio p { font-size: 14px; }
 
-.edu-details h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 5px;
-}
+            .skills-section { margin: 0 10px; padding: 40px 5%; border-radius: 30px; }
 
-.edu-details .degree {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-.edu-details .meta {
-  font-size: 0.9rem;
-  color: #999;
-  font-weight: 500;
-}
-
-.edu-details .meta span {
-  margin-left: 15px;
-  color: #555;
-}
-</style>
+            .cert-grid { grid-template-columns: 1fr !important; }
+            .edu-item { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="logo">BALAJI V K</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="work.html">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <div class="logo">BALAJI V K</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
 <div class="container">
   
-  <section class="about-hero">
-    <div class="photo-frame">
-      <img src="images/balaji-profile.png" alt="Balaji" class="my-photo">
-    </div>
-    <div class="bio">
-      <span class="section-label"> BALAJI V K / MCA GRADUATE</span>
-      <h1>I build digital products with soul.</h1>
-      <p>
-        I'm <strong>Balaji</strong>, a Full-Stack Developer and System Engineer based in Chennai. I specialize in bridging the gap between complex backend logic and pixel-perfect frontend design.
-      </p>
-      <p>
-        My journey is driven by a simple goal: creating technology that solves real problems—whether that's a high-performance POS system or an intuitive event management platform.
-      </p>
-      <a href="resume.pdf" download class="btn-resume">Download Resume</a>
-    </div>
-  </section>
-
-  <section class="skills-section">
-    <span class="section-label">Technical Stack</span>
-    
-    <div class="skill-category">
-      <h3>Frontend & UI</h3>
-      <div class="skill-grid">
-        <div class="skill-tag">HTML5</div>
-        <div class="skill-tag">CSS3</div>
-        <div class="skill-tag">JavaScript (ES6)</div>
-        <div class="skill-tag">Figma</div>
-        <div class="skill-tag">Adobe XD</div>
-        <div class="skill-tag">Sketch</div>
-        <div class="skill-tag">Responsive Design</div>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h3>Backend & Database</h3>
-      <div class="skill-grid">
-        <div class="skill-tag">Python</div>
-        <div class="skill-tag">Flask</div>
-        <div class="skill-tag">SQLite / Sheets DB</div>
-        <div class="skill-tag">Firebase</div>
-        <div class="skill-tag">REST APIs</div>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h3>Techinical field</h3>
-      <div class="skill-grid">
-        <div class="skill-tag">Desktop Support & Troubleshooting</div>
-        <div class="skill-tag">Hardware Diagnostics & Repair</div>
-        <div class="skill-tag">Network Configuration (LAN/WAN)</div>
-        <div class="skill-tag">PC Architecture & Custom Building</div>
-        <div class="skill-tag">OS Deployment & Migration</div>
-      </div>
-    </div>
-
-  </section>
-
-  <div class="info-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 10%; align-items: start;">
-
-    <div class="experience-column">
-      <span class="section-label">Experience</span>
-      <h2 class="academic-title">Professional Journey</h2>
-
-      <div class="edu-item" style="display: block; padding: 25px;">
-        <p><strong>PLANT GREEN INERTIA PVT.LTD</strong></p>
-        <p style="color: #7F77DD; font-weight: 600; font-size: 0.9rem; margin-top: 5px;">
-          PYTHON FULL STACK DEVELOPER (Internship)
-        </p>
-        <p style="font-size: 0.85rem; color: #888; margin: 8px 0;">DEC 2025 - APRIL 2026</p>
-        <p style="color: #555; font-size: 0.95rem; line-height: 1.6;">
-          Developed full-stack internal automation tools using Python, implementing scalable architectural patterns to optimize data workflows across the software development lifecycle.
-        </p>
-      </div>
-
-      <div class="edu-item" style="display: block; padding: 25px; margin-bottom: 20px;">
-        <p><strong>INSPIRE SOFTECH SOLUTION</strong></p>
-        <p style="color: #7F77DD; font-weight: 600; font-size: 0.9rem; margin-top: 5px;">
-          PYTHON WITH DJANGO (Internship)
-        </p>
-        <p style="font-size: 0.85rem; color: #888; margin: 8px 0;">May 2025 - Jun 2025</p>
-        <p style="color: #555; font-size: 0.95rem; line-height: 1.6;">
-          Built specialized internal tools for data management and process automation using Python, focusing on scalable system architecture and efficient software development lifecycles.
-        </p>
-      </div>
-    </div>
-
-    <div class="education-column">
-      <span class="section-label">Education</span>
-      <h2 class="academic-title">Academic Background</h2>
-
-      <div class="edu-item">
-        <div class="edu-logo">
-          <img src="images/srm-logo.png" alt="SRM Logo">
+    <section class="about-hero">
+        <div class="photo-frame">
+            <img src="images/balaji-profile.png" alt="Balaji" class="my-photo">
         </div>
-        <div class="edu-details">
-          <h4>SRM Institute of Science and Technology, Ramapuram</h4>
-          <p class="degree">MCA, Computer Applications</p>
-          <p class="meta">2024 — 2026 <span>CGPA: 8.25</span></p>
+        <div class="bio">
+            <span class="section-label">BALAJI V K / MCA GRADUATE</span>
+            <h1>I build digital products with soul.</h1>
+            <p>
+                I'm <strong>Balaji</strong>, a Full-Stack Developer and System Engineer based in Chennai. I specialize in bridging the gap between complex backend logic and pixel-perfect frontend design.
+            </p>
+            <p>
+                My journey is driven by a simple goal: creating technology that solves real problems—whether that's a high-performance POS system or an intuitive event management platform.
+            </p>
+            <a href="resume.pdf" target="_blank" class="btn-resume">Download & View Resume</a>
         </div>
-      </div>
+    </section>
 
-      <div class="edu-item">
-        <div class="edu-logo">
-          <img src="images/srm-logo.png" alt="SRM Logo">
+    <section class="skills-section">
+        <span class="section-label">Technical Stack</span>
+        
+        <div class="skill-category">
+            <h3>Frontend & UI</h3>
+            <div class="skill-grid">
+                <div class="skill-tag">HTML5</div>
+                <div class="skill-tag">CSS3</div>
+                <div class="skill-tag">JavaScript (ES6)</div>
+                <div class="skill-tag">Figma</div>
+                <div class="skill-tag">Adobe XD</div>
+                <div class="skill-tag">Sketch</div>
+                <div class="skill-tag">Responsive Design</div>
+            </div>
         </div>
-        <div class="edu-details">
-          <h4>RM Institute of Science and Technology, Vadapalani</h4>
-          <p class="degree">BSC, Computer Science</p>
-          <p class="meta">2021 — 2024 <span>CGPA: 7.9</span></p>
+
+        <div class="skill-category">
+            <h3>Backend & Database</h3>
+            <div class="skill-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Flask</div>
+                <div class="skill-tag">SQLite / Sheets DB</div>
+                <div class="skill-tag">Firebase</div>
+                <div class="skill-tag">REST APIs</div>
+            </div>
         </div>
-      </div>
+
+        <div class="skill-category">
+            <h3>Technical field</h3>
+            <div class="skill-grid">
+                <div class="skill-tag">Desktop Support & Troubleshooting</div>
+                <div class="skill-tag">Hardware Diagnostics & Repair</div>
+                <div class="skill-tag">Network Configuration (LAN/WAN)</div>
+                <div class="skill-tag">PC Architecture & Custom Building</div>
+                <div class="skill-tag">OS Deployment & Migration</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="info-row">
+        <div class="experience-column">
+            <span class="section-label">Experience</span>
+            <h2 class="academic-title">Professional Journey</h2>
+
+            <div class="edu-item" style="display: block;">
+                <p><strong>PLANT GREEN INERTIA PVT.LTD</strong></p>
+                <p style="color: #7F77DD; font-weight: 600; font-size: 0.9rem; margin-top: 5px;">
+                    PYTHON FULL STACK DEVELOPER (Internship)
+                </p>
+                <p style="font-size: 0.85rem; color: #888; margin: 8px 0;">DEC 2025 - APRIL 2026</p>
+                <p style="color: #555; font-size: 0.95rem; line-height: 1.6;">
+                    Developed full-stack internal automation tools using Python, implementing scalable architectural patterns to optimize data workflows across the software development lifecycle.
+                </p>
+            </div>
+
+            <div class="edu-item" style="display: block;">
+                <p><strong>INSPIRE SOFTECH SOLUTION</strong></p>
+                <p style="color: #7F77DD; font-weight: 600; font-size: 0.9rem; margin-top: 5px;">
+                    PYTHON WITH DJANGO (Internship)
+                </p>
+                <p style="font-size: 0.85rem; color: #888; margin: 8px 0;">May 2025 - Jun 2025</p>
+                <p style="color: #555; font-size: 0.95rem; line-height: 1.6;">
+                    Built specialized internal tools for data management and process automation using Python, focusing on scalable system architecture and efficient software development lifecycles.
+                </p>
+            </div>
+        </div>
+
+        <div class="education-column">
+            <span class="section-label">Education</span>
+            <h2 class="academic-title">Academic Background</h2>
+
+            <div class="edu-item">
+                <div class="edu-logo">
+                    <img src="images/srm-logo.png" alt="SRM Logo">
+                </div>
+                <div class="edu-details">
+                    <h4>SRM Institute of Science and Technology, Ramapuram</h4>
+                    <p class="degree">MCA, Computer Applications</p>
+                    <p class="meta">2024 — 2026 <span>CGPA: 8.25</span></p>
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-logo">
+                    <img src="images/srm-logo.png" alt="SRM Logo">
+                </div>
+                <div class="edu-details">
+                    <h4>SRM Institute of Science and Technology, Vadapalani</h4>
+                    <p class="degree">BSC, Computer Science</p>
+                    <p class="meta">2021 — 2024 <span>CGPA: 7.9</span></p>
+                </div>
+            </div>
+        </div>
     </div>
-<section class="info-row" style="padding: 0 10% 80px; display: block;">
-    <span class="section-label">Recognition</span>
-    <h2 class="academic-title">Certifications</h2>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      
-      <div class="edu-item" style="background: #fff;">
-        <div class="edu-logo">
-          <img src="images/certification udemy.png" alt="Cert">
-        </div>
-        <div class="edu-details">
-          <h4>COMPLETE WEB & MOBILE DESIGNER: UI/UX,FIGMA ,+MORE</h4>
-          <p class="degree">Verified by UDEMY</p>
-          <p class="meta">Issued: MAY 2025 <span>Certificate no: UC-ba5ae688-a04e-4856-825c-d6565750e24e</span></p>
-        </div>
-      </div>
+    <section class="info-row" style="padding: 0 10% 80px; display: block;">
+        <span class="section-label">Recognition</span>
+        <h2 class="academic-title">Certifications</h2>
 
-      <div class="edu-item" style="background: #fff;">
-        <div class="edu-logo">
-          <img src="images/techinical support.png" alt="Cert">
-        </div>
-        <div class="edu-details">
-          <h4>DESKTOP SUPPORT ,HARDWARE ENGINEER , NETWORKING,TECHINICAL SUPPORT</h4>
-          <p class="degree">SELF LEARNING</p>
-          
-        </div>
-      </div>
+        <div class="cert-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="edu-item">
+                <div class="edu-logo">
+                    <img src="images/certification udemy.png" alt="Cert">
+                </div>
+                <div class="edu-details">
+                    <h4>COMPLETE WEB & MOBILE DESIGNER: UI/UX, FIGMA, +MORE</h4>
+                    <p class="degree">Verified by UDEMY</p>
+                    <p class="meta">Issued: MAY 2025 <span>Certificate no: UC-ba5ae688-a04e-4856-825c-d6565750e24e</span></p>
+                </div>
+            </div>
 
-    </div>
-  </section>
-  </div> </div> <footer>
-  Developed by BALAJI · Built for the Future · 2026
+            <div class="edu-item">
+                <div class="edu-logo">
+                    <img src="images/techinical support.png" alt="Cert">
+                </div>
+                <div class="edu-details">
+                    <h4>DESKTOP SUPPORT, HARDWARE ENGINEER, NETWORKING, TECHNICAL SUPPORT</h4>
+                    <p class="degree">SELF LEARNING</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    Developed by BALAJI · Built for the Future · 2026
 </footer>
 
 </body>

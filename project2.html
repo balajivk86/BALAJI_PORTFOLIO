@@ -8,11 +8,27 @@
   <style>
     html { scroll-behavior: smooth; }
 
+    :root {
+      --primary: #7F77DD;
+      --bg-light: #fafafa;
+      --text-main: #333;
+      --text-muted: #555;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       padding: 40px;
-      background: #fafafa;
-      color: #333;
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* STEP 3 — FIX IMAGE OVERFLOW */
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     .back-btn {
@@ -20,7 +36,7 @@
       padding: 8px 16px;
       border-radius: 8px;
       background: #f3f4f6;
-      color: #333;
+      color: var(--text-main);
       font-size: 13px;
       text-decoration: none;
       margin-bottom: 30px;
@@ -28,7 +44,7 @@
     }
 
     .back-btn:hover {
-      background: #7F77DD;
+      background: var(--primary);
       color: #fff;
     }
 
@@ -43,7 +59,7 @@
     }
 
     .description {
-      color: #555;
+      color: var(--text-muted);
       max-width: 700px;
       line-height: 1.6;
       margin: 0 auto;
@@ -54,18 +70,19 @@
       margin-top: 50px;
       margin-bottom: 20px;
       font-size: 1.4rem;
-      border-left: 5px solid #7F77DD;
+      border-left: 5px solid var(--primary);
       padding-left: 15px;
     }
 
     p, li {
-      color: #555;
+      color: var(--text-muted);
       max-width: 750px;
       line-height: 1.7;
     }
 
     ul { padding-left: 20px; }
 
+    /* IMAGE GRID */
     .img-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -89,7 +106,7 @@
       align-items: center;
       padding: 20px 40px;
       border-radius: 14px;
-      background: linear-gradient(135deg, #6e8efb, #a777e3, #7F77DD);
+      background: linear-gradient(135deg, #6e8efb, #a777e3, var(--primary));
       color: #fff;
       font-weight: 800;
       font-size: 18px;
@@ -109,6 +126,42 @@
       background: #fff;
       border-radius: 20px;
     }
+
+    /* 📱 STEP 2 & 4 — MOBILE RESPONSIVE CSS */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      header {
+        margin-bottom: 40px;
+        text-align: left;
+      }
+
+      /* FIX TEXT SIZE */
+      h1 { font-size: 26px; }
+      h3 { font-size: 22px; }
+      p, li, .description { font-size: 14px; }
+
+      /* GRID FIX */
+      .img-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      /* BUTTONS */
+      .github-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+
+      .cta-container {
+        margin: 40px 0;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -124,7 +177,6 @@
   </p>
 </header>
 
-<!-- ✅ PROJECT OVERVIEW -->
 <h3>Project Overview</h3>
 <p>
 This POS system was developed to streamline shop operations including billing, inventory control, 
@@ -132,14 +184,12 @@ and customer management. The system enables quick transactions, real-time stock 
 efficient business tracking.
 </p>
 
-<!-- ✅ MY ROLE -->
 <h3>My Role</h3>
 <p>
 I independently designed and developed the full system including UI/UX, backend logic, database design, 
 invoice generation, barcode integration, and deployment as a desktop application.
 </p>
 
-<!-- ✅ DEVELOPMENT PROCESS -->
 <h3>Development Process</h3>
 <p>
 The project was developed in phases starting from UI design and requirement analysis, followed by 
@@ -148,7 +198,6 @@ advanced features such as discount handling, reporting dashboard, and auto-updat
 Finally, the system was packaged into an executable and deployed using an installer.
 </p>
 
-<!-- ✅ TOOLS -->
 <h3>Tools & Technologies</h3>
 <ul>
   <li>Figma – UI/UX design, wireframing and prototyping</li>
@@ -169,7 +218,6 @@ quick billing flow, minimal clicks, and clarity for shop users. These designs we
 translated into the final application using HTML, CSS, and Tailwind.
 </p>
 
-<!-- ✅ FEATURES -->
 <h3>Key Features</h3>
 <ul>
   <li>Smart Billing System with discount (₹ & %)</li>
@@ -181,31 +229,29 @@ translated into the final application using HTML, CSS, and Tailwind.
   <li>Auto Update System</li>
 </ul>
 
-<!-- UI SECTIONS -->
 <h3>Login & Dashboard</h3>
 <div class="img-grid">
-  <img src="images/pos1.png">
-  <img src="images/pos2.png">
+  <img src="images/pos1.png" alt="Login Page">
+  <img src="images/pos2.png" alt="Dashboard View">
 </div>
 
 <h3>Sales & Reports</h3>
 <div class="img-grid">
-  <img src="images/pos3.png">
-  <img src="images/pos4.png">
+  <img src="images/pos3.png" alt="Sales Data">
+  <img src="images/pos4.png" alt="Analytics Reports">
 </div>
 
 <h3>Inventory Management</h3>
 <div class="img-grid">
-  <img src="images/pos5.png">
-  <img src="images/pos6.png">
+  <img src="images/pos5.png" alt="Stock List">
+  <img src="images/pos6.png" alt="Product Entry">
 </div>
 
 <h3>Billing & POS Screen</h3>
 <div class="img-grid">
-  <img src="images/pos7.png">
+  <img src="images/pos7.png" alt="Billing Interface">
 </div>
 
-<!-- CTA -->
 <div class="cta-container">
   <a href="https://github.com/balajivk86/freelancer-pos-jayalakshmi-motors" target="_blank" class="github-btn">
     💻 View Full Project on GitHub ↗

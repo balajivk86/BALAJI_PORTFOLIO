@@ -8,11 +8,27 @@
   <style>
     html { scroll-behavior: smooth; }
 
+    :root {
+      --primary: #7F77DD;
+      --bg-light: #fafafa;
+      --text-main: #333;
+      --text-muted: #555;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       padding: 40px;
-      background: #fafafa;
-      color: #333;
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* STEP 3 — FIX IMAGE OVERFLOW */
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     .back-btn {
@@ -20,7 +36,7 @@
       padding: 8px 16px;
       border-radius: 8px;
       background: #f3f4f6;
-      color: #333;
+      color: var(--text-main);
       font-size: 13px;
       text-decoration: none;
       margin-bottom: 30px;
@@ -28,7 +44,7 @@
     }
 
     .back-btn:hover {
-      background: #7F77DD;
+      background: var(--primary);
       color: #fff;
     }
 
@@ -43,7 +59,7 @@
     }
 
     .description {
-      color: #555;
+      color: var(--text-muted);
       max-width: 700px;
       line-height: 1.6;
       margin: 0 auto;
@@ -54,18 +70,19 @@
       margin-top: 50px;
       margin-bottom: 20px;
       font-size: 1.4rem;
-      border-left: 5px solid #7F77DD;
+      border-left: 5px solid var(--primary);
       padding-left: 15px;
     }
 
     p, li {
-      color: #555;
+      color: var(--text-muted);
       max-width: 750px;
       line-height: 1.7;
     }
 
     ul { padding-left: 20px; }
 
+    /* IMAGE GRID */
     .img-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -89,7 +106,7 @@
       align-items: center;
       padding: 20px 40px;
       border-radius: 14px;
-      background: linear-gradient(135deg, #6e8efb, #a777e3, #7F77DD);
+      background: linear-gradient(135deg, #6e8efb, #a777e3, var(--primary));
       color: #fff;
       font-weight: 800;
       font-size: 18px;
@@ -109,6 +126,41 @@
       background: #fff;
       border-radius: 20px;
     }
+
+    /* 📱 STEP 2 & 4 — MOBILE RESPONSIVE CSS */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      header {
+        margin-bottom: 40px;
+        text-align: left;
+      }
+
+      /* FIX TEXT SIZE */
+      h1 { font-size: 26px; }
+      h3 { font-size: 22px; }
+      p, li, .description { font-size: 14px; }
+
+      /* PROJECT GRID FIX */
+      .img-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .github-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+
+      .cta-container {
+        margin: 40px 0;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -117,27 +169,24 @@
 <a href="work.html" class="back-btn">← Back to Projects</a>
 
 <header>
-  <h1> EVENT MATRIX-Smart Event Management System</h1>
+  <h1>EVENT MATRIX - Smart Event Management System</h1>
   <p class="description">
     A full-stack event booking system with QR ticketing and organizer dashboard.
   </p>
 </header>
 
-<!-- ✅ PROJECT OVERVIEW -->
 <h3>Project Overview</h3>
 <p>
 This system allows users to browse events, register, and receive QR-based tickets.
 Organizers can manage events, track registrations, and monitor analytics using a dashboard.
 </p>
 
-<!-- ✅ MY ROLE -->
 <h3>My Role</h3>
 <p>
 I designed and developed the complete system including UI/UX design, backend logic,
 database integration, QR code generation, and email automation.
 </p>
 
-<!-- ✅ TOOLS -->
 <h3>Tools & Technologies</h3>
 <ul>
   <li>Figma – UI/UX design and prototyping</li>
@@ -146,10 +195,8 @@ database integration, QR code generation, and email automation.
   <li>Google sheets – Database</li>
   <li>QR Code Generation</li>
   <li>Email Integration (SMTP)</li>
-
 </ul>
 
-<!-- ✅ FEATURES -->
 <h3>Key Features</h3>
 <ul>
   <li>QR Code Ticket Generation</li>
@@ -157,49 +204,46 @@ database integration, QR code generation, and email automation.
   <li>Organizer Dashboard</li>
   <li>Email Confirmation</li>
   <li>Staff management</li>
-  
 </ul>
 
-<!-- DESIGN -->
 <h3>Landing & Home</h3>
 <div class="img-grid">
-  <img src="images/event1.png">
-  <img src="images/event2.png">
+  <img src="images/event1.png" alt="Landing Page">
+  <img src="images/event2.png" alt="Home Screen">
 </div>
 
 <h3>Event Browsing</h3>
 <div class="img-grid">
-  <img src="images/event3.png">
-  <img src="images/event4.png">
+  <img src="images/event3.png" alt="Browsing 1">
+  <img src="images/event4.png" alt="Browsing 2">
 </div>
 
 <h3>Login & Registration</h3>
 <div class="img-grid">
-  <img src="images/event5.png">
-  <img src="images/event6.png">
+  <img src="images/event5.png" alt="Login">
+  <img src="images/event6.png" alt="Registration">
 </div>
 
 <h3>Organizer Dashboard</h3>
 <div class="img-grid">
-  <img src="images/event7.png">
-  <img src="images/event8.png">
+  <img src="images/event7.png" alt="Dashboard 1">
+  <img src="images/event8.png" alt="Dashboard 2">
 </div>
 
 <h3>Booking & Forms</h3>
 <div class="img-grid">
-  <img src="images/event9.png">
-  <img src="images/event10.png">
-  <img src="images/event11.png">
-  <img src="images/event12.png">
+  <img src="images/event9.png" alt="Booking 1">
+  <img src="images/event10.png" alt="Booking 2">
+  <img src="images/event11.png" alt="Booking 3">
+  <img src="images/event12.png" alt="Booking 4">
 </div>
 
 <h3>Final Screens</h3>
 <div class="img-grid">
-  <img src="images/event13.png">
-  <img src="images/event14.png">
+  <img src="images/event13.png" alt="Final 1">
+  <img src="images/event14.png" alt="Final 2">
 </div>
 
-<!-- CTA -->
 <div class="cta-container">
   <a href="https://github.com/balajivk86/event-matrix--portfolio" target="_blank" class="github-btn">
     💻 View Full Project on GitHub ↗
